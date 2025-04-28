@@ -6,7 +6,7 @@
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:8081",
-    "beforeDevCommand": "cd src && yarn web",
+    "beforeDevCommand": "cd src && yarn dev:web",
     "beforeBuildCommand": "cd src && npx expo export"
   },
   "app": {
