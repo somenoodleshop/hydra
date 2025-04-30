@@ -1,34 +1,15 @@
 import { useState } from 'react'
 import { View, ScrollView } from 'react-native'
 
+import { sendMessage } from '~/handler/chat'
+
 import { Input } from '~/reusables/ui/input'
 
 import ChatMessage from '~/components/ChatMessage'
 
 const Chat = () => {
   const [message, setMessage] = useState('')
-  const [messages, setMessages] = useState([
-    {
-      id: '1',
-      text: 'Hello! How can I help you today?',
-      isSent: false,
-      timestamp: new Date()
-    }
-  ])
-
-  const sendMessage = () => {
-    if (!message.trim()) return
-
-    const newMessage = {
-      id: Date.now().toString(),
-      message: message.trim(),
-      isSent: true,
-      timestamp: new Date()
-    }
-
-    setMessages(prev => [...prev, newMessage])
-    setMessage('')
-  }
+  const [messages, setMessages] = useState([])
 
   return (
     <View className='flex-1 w-full bg-background'>
@@ -43,7 +24,7 @@ const Chat = () => {
           value={message}
           onChangeText={setMessage}
           placeholder="Type a message..."
-          onSubmitEditing={sendMessage}
+          onSubmitEditing={sendMessage({ message, setMessage, setMessages })}
           returnKeyType="send"
         />
       </View>
