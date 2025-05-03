@@ -36,9 +36,9 @@ const Chat = () => {
             className='flex-1'
             value={message}
             onChangeText={setMessage}
-            placeholder="Type a message..."
+            placeholder='Type a message...'
             onSubmitEditing={sendMessage({ message, setMessage, setMessages })}
-            returnKeyType="send"
+            returnKeyType='send'
           />
         </View>
       </View>
