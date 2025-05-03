@@ -1,8 +1,8 @@
 export const sendMessage = api => () => {
   const newMessage = {
     id: Date.now().toString(),
-    message: api.message.trim(),
-    isSent: true,
+    role: 'user',
+    content: api.message.trim(),
     timestamp: new Date()
   }
 
