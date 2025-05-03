@@ -1,0 +1,63 @@
+{
+  "sessions": [
+    { "id": "1", "name": "General Chat" },
+    { "id": "2", "name": "Project Alpha" },
+    { "id": "3", "name": "Random" }
+  ],
+  "messages": {
+    "1": [
+      {
+        "id": "m1",
+        "role": "user",
+        "content": "Hello! Can you help me with something?",
+        "timestamp": "2024-06-01T10:00:00Z"
+      },
+      {
+        "id": "m2",
+        "role": "assistant",
+        "content": "Of course! What do you need help with?",
+        "timestamp": "2024-06-01T10:00:02Z"
+      },
+      {
+        "id": "m3",
+        "role": "user",
+        "content": "What's the weather like today?",
+        "timestamp": "2024-06-01T10:00:10Z"
+      },
+      {
+        "id": "m4",
+        "role": "assistant",
+        "content": "It's sunny and 25°C in your area.",
+        "timestamp": "2024-06-01T10:00:12Z"
+      }
+    ],
+    "2": [
+      {
+        "id": "m5",
+        "role": "user",
+        "content": "Summarize the latest project updates.",
+        "timestamp": "2024-06-02T09:15:00Z"
+      },
+      {
+        "id": "m6",
+        "role": "assistant",
+        "content": "The team completed the initial prototype and started user testing.",
+        "timestamp": "2024-06-02T09:15:03Z"
+      }
+    ],
+    "3": [
+      {
+        "id": "m7",
+        "role": "user",
+        "content": "Tell me a joke.",
+        "timestamp": "2024-06-03T14:20:00Z"
+      },
+      {
+        "id": "m8",
+        "role": "assistant",
+        "content": "Why did the developer go broke? Because he used up all his cache.",
+        "timestamp": "2024-06-03T14:20:02Z"
+      }
+    ]
+  }
+}
