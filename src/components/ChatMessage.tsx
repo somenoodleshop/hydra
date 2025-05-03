@@ -11,9 +11,9 @@ const ChatMessage = props => (
     }`}
   >
     <Text 
-      className={props.isSent ? 'text-foreground' : 'text-foreground'}
+      className={props.role === 'user' ? 'text-foreground' : 'text-foreground'}
     >
-      { props.message }
+      { props.content }
     </Text>
   </View>
 )

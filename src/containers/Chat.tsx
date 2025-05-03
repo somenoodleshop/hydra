@@ -11,21 +11,26 @@ import { Input } from '~/reusables/ui/input'
 import ChatMessage from '~/components/ChatMessage'
 import Sessions from '~/containers/Sessions'
 
+const handleSessionSelect = api => id => {
+  api.setCurrentSession(id)
+  api.setMessages(mockData.messages[id])
+}
+
 const Chat = () => {
-  const [currentSession, setCurrentSession] = useState(mockData.sessions[0])
+  const [currentSession, setCurrentSession] = useState(mockData.sessions[0].id)
   const [sessions, setSessions] = useLocalStorage('sessions', mockData.sessions)
   const [message, setMessage] = useState('')
-  const [messages, setMessages] = useState(mockData.messages[currentSession.id])
+  const [messages, setMessages] = useState(mockData.messages[currentSession])
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
-      <View style={{ width: '15%' }} className='h-full border-r border-border px-2 pt-4'>
+      <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
         <Sessions
           sessions={sessions}
-          onSessionSelect={id => setCurrentSession(id)}
+          onSessionSelect={handleSessionSelect({ setCurrentSession, setMessages })}
         />
       </View>
-      <View style={{ width: '85%' }} className='h-full flex-1'>
+      <View className='h-full flex-1 w-[80%]'>
         <ScrollView className='flex-1 px-4 pt-4'>
           { messages.map(msg => (<ChatMessage key={msg.id} {...msg} />)) }
         </ScrollView>
