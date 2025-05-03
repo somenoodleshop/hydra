@@ -11,8 +11,9 @@ const Sessions = props => {
           key={session.id}
           variant="link"
           onPress={() => props.onSessionSelect(session.id)}
+          className="w-full items-start"
         >
-          <Text className='text-sm'>{ session.name }</Text>
+          <Text className="text-sm">{ session.name }</Text>
         </Button>
       )) }
     </View>
