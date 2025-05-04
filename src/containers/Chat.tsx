@@ -3,7 +3,7 @@ import { View, ScrollView } from 'react-native'
 
 import mockData from '~/mock/data.json'
 
-import useLocalStorage from '~/hook/useLocalStorage'
+import usePersistentStorage from '~/hook/usePersistentStorage'
 import { sendMessage } from '~/handler/chat'
 
 import { Input } from '~/reusables/ui/input'
@@ -18,7 +18,7 @@ const handleSessionSelect = api => id => {
 
 const Chat = () => {
   const [currentSession, setCurrentSession] = useState(mockData.sessions[0].id)
-  const [sessions, setSessions] = useLocalStorage('sessions', mockData.sessions)
+  const [sessions, setSessions] = usePersistentStorage('sessions', mockData.sessions)
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState(mockData.messages[currentSession])
 
