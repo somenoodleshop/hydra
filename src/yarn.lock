@@ -1769,10 +1769,27 @@
     use-latest-callback "^0.2.1"
     use-sync-external-store "^1.2.2"
 
+"@react-navigation/drawer@^7.3.10":
+  version "7.3.10"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-7.3.10.tgz#d6e32dcaa6e6832bc3fa854834440fccc45d5da1"
+  integrity sha512-YtYPG9s62qamfbgIHuvVKquTdeoXtNaTSjhEegUZaGmTw9njqfZwgrKl8dys9+dQXCSy/RxZLstRvKERT3U5Tg==
+  dependencies:
+    "@react-navigation/elements" "^2.4.0"
+    color "^4.2.3"
+    react-native-drawer-layout "^4.1.7"
+    use-latest-callback "^0.2.3"
+
 "@react-navigation/elements@^2.3.8":
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.3.8.tgz#ebf32b2f4540b5f6391a937e437ac7f4aed1f2d4"
   integrity sha512-2ZVBtPfrkmOxzvIyDu3fPZ6aS4HcXL+TvzPDGa1znY2OP1Llo6wH14AmJHQFDquiInp2656hRMM1BkfJ3yPwew==
+  dependencies:
+    color "^4.2.3"
+
+"@react-navigation/elements@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.4.0.tgz#dacb520ee87a9ededcd9aa175c1f2364a49557f1"
+  integrity sha512-3gTASi9fK+Nj17pu1w58nCLELMYqOZrziO8gmTKhlFFcq7ppF5pMu+IiVOOfSVnxO74UIYMZSIhlu+fK3EG/YA==
   dependencies:
     color "^4.2.3"
 
@@ -5492,6 +5509,13 @@ react-native-css-interop@0.1.22:
     lightningcss "^1.27.0"
     semver "^7.6.3"
 
+react-native-drawer-layout@^4.1.7:
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-4.1.7.tgz#1c741c9bf9c739d6672201692e4ba4839ca0c8ff"
+  integrity sha512-KeTGZsNEDbOmgo8ICwr1vBmvWjRrRsvbLc2IAfQnW5h5UtxVZVRxY4QaN84BSBQPXm6tQ6AXfII8TCXCv3c0Ew==
+  dependencies:
+    use-latest-callback "^0.2.3"
+
 react-native-helmet-async@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-native-helmet-async/-/react-native-helmet-async-2.0.4.tgz#93f53a1ff22d6898039688a541653a2d6b6866bb"
@@ -6494,7 +6518,7 @@ update-browserslist-db@^1.1.1:
     escalade "^3.2.0"
     picocolors "^1.1.1"
 
-use-latest-callback@^0.2.1:
+use-latest-callback@^0.2.1, use-latest-callback@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/use-latest-callback/-/use-latest-callback-0.2.3.tgz#2d644d3063040b9bc2d4c55bb525a13ae3de9e16"
   integrity sha512-7vI3fBuyRcP91pazVboc4qu+6ZqM8izPWX9k7cRnT8hbD5svslcknsh3S9BUhaK11OmgTV4oWZZVSeQAiV53SQ==
