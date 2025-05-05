@@ -2,7 +2,7 @@ import { View } from 'react-native'
 
 import { Text } from '~/reusables/ui/text'
 
-const ChatMessage = props => (
+const Message = props => (
   <View 
     className={`max-w-[80%] px-4 py-2 mb-2 ${
       props.isSent 
@@ -18,4 +18,4 @@ const ChatMessage = props => (
   </View>
 )
 
-export default ChatMessage
+export default Message

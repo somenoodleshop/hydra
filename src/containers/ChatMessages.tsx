@@ -7,7 +7,7 @@ import { sendMessage } from '~/handler/chat'
 
 import { Input } from '~/reusables/ui/input'
 
-import ChatMessage from './ChatMessage'
+import Message from '~/components/Message'
 
 const ChatMessages = props => {
   const [message, setMessage] = useState('')

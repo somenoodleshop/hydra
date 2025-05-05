@@ -5,7 +5,7 @@ import mockData from '~/mock/data.json'
 
 import usePersistentStorage from '~/hook/usePersistentStorage'
 
-import ChatMessages from '~/components/ChatMessages'
+import ChatMessages from '~/containers/ChatMessages'
 import Sessions from '~/containers/Sessions'
 
 const Chat = () => {
