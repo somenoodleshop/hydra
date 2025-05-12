@@ -8,15 +8,9 @@ import { Text } from '~/reusables/ui/text'
 const Nav = () => {
   const [value, setValue] = useState('')
 
-  const handleChange = value => {
-    console.log('Nav value changed')
-    console.log(value)
-    setValue(value)
-  }
-  
   return (
     <View>
-      <NavigationMenu value={value} onValueChange={handleChange}>
+      <NavigationMenu value={value} onValueChange={setValue}>
         <NavigationMenuList>
           <NavigationMenuLink href='/' value='home'>
             <Text>Home</Text>
