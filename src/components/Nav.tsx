@@ -3,16 +3,15 @@ import { Stack } from 'expo-router/stack'
 import { Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { ThemeToggle } from '~/reusables/ThemeToggle'
-import MenuToggle from './MenuToggle'
-import DrawerContent from './DrawerContent'
-import { screenOptions } from '~/style'
 
-interface NavProps {
-  isDarkColorScheme: boolean
-}
+import { ThemeToggle } from 'reusables/ThemeToggle'
 
-const Nav = ({ isDarkColorScheme }: NavProps) => {
+import MenuToggle from 'components/MenuToggle'
+import DrawerContent from 'components/DrawerContent'
+
+import { screenOptions } from 'style'
+
+const Nav = props => {
   const navigation = useNavigation()
 
   return Platform.OS === 'web' ? (
@@ -32,7 +31,7 @@ const Nav = ({ isDarkColorScheme }: NavProps) => {
         screenOptions={{
           headerLeft: () => <MenuToggle {...{ navigation }} />,
           headerRight: () => <ThemeToggle />,
-          ...screenOptions(isDarkColorScheme),
+          ...screenOptions(props.isDarkColorScheme),
         }}
       >
         <Drawer.Screen
