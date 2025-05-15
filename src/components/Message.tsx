@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 
-import { Text } from '~/reusables/ui/text'
+import { Text } from 'reusables/ui/text'
 
 const Message = props => (
   <View 
