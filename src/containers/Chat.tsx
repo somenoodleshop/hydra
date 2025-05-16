@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 
 import mockData from '~/mock/data.json'
 
@@ -14,9 +14,11 @@ const Chat = () => {
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
-      <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
-        <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
-      </View>
+      {Platform.OS === 'web' && (
+        <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
+          <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
+        </View>
+      )}
       <ChatMessages {...{ currentSession }} />
     </View>
   )
