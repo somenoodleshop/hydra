@@ -6,6 +6,7 @@ import mockData from 'mock/data.json'
 import usePersistentStorage from 'hook/usePersistentStorage'
 
 import Sessions from 'containers/Sessions'
+import SettingsButton from 'components/SettingsButton'
 
 const DrawerContent = props => {
   const [sessions] = usePersistentStorage('sessions', mockData.sessions)
@@ -17,6 +18,9 @@ const DrawerContent = props => {
           sessions={sessions} 
           onSessionSelect={sessionId => props.navigation.navigate('chat', { sessionId })}
         />
+        <View className='mtrauto py-4'>
+          <SettingsButton onPress={() => props.navigation.navigate('settings')} />
+        </View>
       </View>
     </DrawerContentScrollView>
   )
