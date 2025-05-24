@@ -16,7 +16,7 @@ const DrawerContent = props => {
       <View className='flex-1 px-4 pt-4'>
         <Sessions 
           sessions={sessions} 
-          onSessionSelect={sessionId => props.navigation.navigate('chat', { sessionId })}
+          onSessionSelect={sessionId => props.navigation.navigate('index', { sessionId })}
         />
         <View className='mtrauto py-4'>
           <SettingsButton onPress={() => props.navigation.navigate('settings')} />
