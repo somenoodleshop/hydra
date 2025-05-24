@@ -6,7 +6,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 import { ThemeToggle } from 'reusables/ThemeToggle'
 
-import MenuToggle from 'components/MenuButton'
+import MenuButton from 'components/MenuButton'
 import DrawerContent from 'components/DrawerContent'
 
 import { screenOptions } from 'style'
@@ -29,7 +29,7 @@ const Nav = props => {
       <Drawer
         drawerContent={(props) => <DrawerContent {...props} />}
         screenOptions={{
-          headerLeft: () => <MenuToggle {...{ navigation }} />,
+          headerLeft: () => <MenuButton {...{ navigation }} />,
           headerRight: () => <ThemeToggle />,
           ...screenOptions(props.isDarkColorScheme),
         }}
