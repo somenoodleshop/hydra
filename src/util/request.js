@@ -1,15 +1,7 @@
-import http from 'node:http'
-import https from 'node:https'
-
-const protocol = { http, https }
-
-const agent = p => new protocol[p.protocol === 'http:' ? 'http' : 'https'].Agent({ keepAlive: true })
-
 const metadata = (method, data, headers = {}) => ({
   method,
   body: JSON.stringify(data),
-  headers: { 'Content-Type': 'application/json', ...headers },
-  agent
+  headers: { 'Content-Type': 'application/json', ...headers }
 })
 
 const res = res => res.ok
@@ -17,7 +9,7 @@ const res = res => res.ok
   : Promise.reject(new Error(res))
 
 export default {
-  get: (url, headers = {}) => fetch(url, { headers, agent }).then(res),
+  get: (url, headers = {}) => fetch(url, { headers }).then(res),
   ...['delete', 'patch', 'post', 'put'].reduce((acc, method) => ({
     ...acc,
     [method]: (url, body, headers = {}) => fetch(url, metadata(method, body, headers))
