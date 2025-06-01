@@ -12,7 +12,7 @@ const Sessions = props => (
         onPress={() => props.onSessionSelect(session.id)}
         className='w-full items-start'
       >
-        <Text className='text-sm'>{ session.name }</Text>
+        <Text>{ session.name }</Text>
       </Button>
     )) }
   </View>
