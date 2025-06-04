@@ -12,17 +12,17 @@ const DrawerContent = props => {
   const [sessions] = usePersistentStorage('sessions', mockData.sessions)
 
   return (
-    <DrawerContentScrollView {...props}>
-      <View className='flex-1 px-4 pt-4'>
+    <View style={{ flex: 1 }}>
+      <DrawerContentScrollView {...props}>
         <Sessions 
           sessions={sessions} 
           onSessionSelect={sessionId => props.navigation.navigate('index', { sessionId })}
         />
-        <View className='mtrauto py-4'>
-          <SettingsButton onPress={() => props.navigation.navigate('settings')} />
-        </View>
+      </DrawerContentScrollView>
+      <View style={{ height: 64, paddingLeft: 30, alignItems: 'flex-start', justifyContent: 'center' }}>
+        <SettingsButton onPress={() => props.navigation.navigate('settings')} />
       </View>
-    </DrawerContentScrollView>
+    </View>
   )
 }
 

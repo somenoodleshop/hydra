@@ -25,7 +25,7 @@ const Nav = props => {
       />
     </Stack>
   ) : (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView>
       <Drawer
         drawerContent={(props) => <DrawerContent {...props} />}
         screenOptions={{
