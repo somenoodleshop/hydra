@@ -1,3 +1,7 @@
+import { View } from 'react-native'
+
+import { Text } from 'reusables/Text'
+
 const Settings = () => {
   return (
     <View>
