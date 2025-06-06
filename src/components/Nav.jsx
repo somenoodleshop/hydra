@@ -38,6 +38,10 @@ const Nav = props => {
           name='index'
           options={{ title: 'Home' }}
         />
+        <Drawer.Screen
+          name='settings'
+          options={{ title: '' }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   )
