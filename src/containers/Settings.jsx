@@ -1,6 +1,7 @@
 import { View } from 'react-native'
 
 import { Text } from 'reusables/Text'
+import { ThemeToggle } from 'reusables/ThemeToggle'
 
 const Settings = () => {
   return (
@@ -10,6 +11,7 @@ const Settings = () => {
         <Text className='text-xl font-bold'>Theme</Text>
         <View className='flex-row items-center justify-between'>
           <Text>Dark Mode</Text>
+          <ThemeToggle />
         </View>
       </View>
     </View>

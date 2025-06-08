@@ -40,7 +40,7 @@ const Nav = props => {
         />
         <Drawer.Screen
           name='settings'
-          options={{ title: '' }}
+          options={{ title: '', headerRight: '' }}
         />
       </Drawer>
     </GestureHandlerRootView>
