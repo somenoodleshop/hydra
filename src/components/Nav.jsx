@@ -30,13 +30,15 @@ const Nav = props => {
         drawerContent={(props) => <DrawerContent {...props} />}
         screenOptions={{
           headerLeft: () => <MenuButton {...{ navigation }} />,
-          headerRight: () => <ThemeToggle />,
           ...screenOptions(props.isDarkColorScheme),
         }}
       >
         <Drawer.Screen
           name='index'
-          options={{ title: 'Home' }}
+          options={{
+            headerLeft: () => <MenuButton {...{ navigation }} />,
+            title: 'Home'
+          }}
         />
         <Drawer.Screen
           name='settings'
