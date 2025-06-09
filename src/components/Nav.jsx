@@ -7,7 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { ThemeToggle } from 'reusables/ThemeToggle'
 
 import MenuButton from 'components/MenuButton'
-import DrawerContent from 'components/DrawerContent'
+import DrawerContent from 'containers/DrawerContent'
 
 import { screenOptions } from 'style'
 
