@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Platform, View, Text } from 'react-native'
+import { Platform, View } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { useQuery } from '@tanstack/react-query'
 
@@ -7,6 +7,8 @@ import mockData from 'mock/data.json'
 
 import usePersistentStorage from 'hook/usePersistentStorage'
 import { getMessages } from 'query/chat'
+
+import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
