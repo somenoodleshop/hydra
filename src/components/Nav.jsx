@@ -18,10 +18,7 @@ const Nav = props => {
     <Stack>
       <Stack.Screen
         name='index'
-        options={{
-          title: 'Home',
-          headerRight: () => <ThemeToggle />
-        }}
+        options={{ headerShown: false }}
       />
     </Stack>
   ) : (
@@ -37,7 +34,7 @@ const Nav = props => {
           name='index'
           options={{
             headerLeft: () => <MenuButton {...{ navigation }} />,
-            title: 'Home'
+            title: ''
           }}
         />
         <Drawer.Screen
