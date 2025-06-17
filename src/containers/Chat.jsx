@@ -12,8 +12,10 @@ import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
+import SettingsButton from 'components/SettingsButton'
 
-const Chat = () => {
+const Chat = ()=> {
+  const navigation = useNavigation()
   const route = useRoute()
   const [currentSession, setCurrentSession] = useState(mockData.sessions[0].id)
   const [sessions, setSessions] = usePersistentStorage('sessions', mockData.sessions)
@@ -31,6 +33,7 @@ const Chat = () => {
       {Platform.OS === 'web' && (
         <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
           <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
+          <SettingsButton onPress={() => navigation.navigate('settings')} />
         </View>
       )}
       { !isLoading

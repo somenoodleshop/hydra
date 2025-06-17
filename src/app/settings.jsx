@@ -1,5 +1,6 @@
-import { View } from 'react-native';
-import { Text } from '~/reusables/ui/text';
+import { View } from 'react-native'
+
+import { Text } from '~/reusables/ui/text'
 
 export default function Settings() {
   return (
