@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Platform, View } from 'react-native'
 import { useRoute } from '@react-navigation/native'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 
 import mockData from 'mock/data.json'
 
