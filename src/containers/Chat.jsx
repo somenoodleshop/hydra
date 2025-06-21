@@ -28,6 +28,8 @@ const Chat = ()=> {
     }
   }, [route.params?.sessionId])
 
+  const mutation = useMutation({ mutationFn: () => request.post('/chat') })
+
   return (
     <View className='flex-1 w-full bg-background flex-row'>
       {Platform.OS === 'web' && (
