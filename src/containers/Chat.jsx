@@ -5,6 +5,7 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 
 import mockData from 'mock/data.json'
 
+import useConfig from 'hook/useConfig'
 import usePersistentStorage from 'hook/usePersistentStorage'
 import { getMessages } from 'query/chat'
 
@@ -17,6 +18,7 @@ import SettingsButton from 'components/SettingsButton'
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
+  const config = useConfig()
   const [currentSession, setCurrentSession] = useState(mockData.sessions[0].id)
   const [sessions, setSessions] = usePersistentStorage('sessions', mockData.sessions)
 
@@ -28,7 +30,7 @@ const Chat = ()=> {
     }
   }, [route.params?.sessionId])
 
-  const mutation = useMutation({ mutationFn: () => request.post('/chat') })
+  const mutation = useMutation({ mutationFn: () => request.post(`${config.apiUrl}/chat`) })
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
