@@ -15,6 +15,8 @@ import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
 import SettingsButton from 'components/SettingsButton'
 
+const createSession = api => () => {}
+
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
