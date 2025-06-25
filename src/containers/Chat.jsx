@@ -15,7 +15,9 @@ import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
 import SettingsButton from 'components/SettingsButton'
 
-const createSession = api => () => {}
+const createSession = api => () => {
+  api.mutate(api.messages)
+}
 
 const Chat = ()=> {
   const navigation = useNavigation()
@@ -32,7 +34,7 @@ const Chat = ()=> {
     }
   }, [route.params?.sessionId])
 
-  const mutation = useMutation({ mutationFn: () => request.post(`${config.apiUrl}/chat`) })
+  const mutation = useMutation({ mutationFn: messages => request.post(`${config.apiUrl}/chat`, messages) })
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
