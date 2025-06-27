@@ -11,9 +11,7 @@ import Message from '~/components/Message'
 
 const ChatMessages = props => {
   const [message, setMessage] = useState('')
-  const [messages, setMessages] = useState(mockData.messages[props.currentSession])
-
-  useEffect(() => { setMessages(mockData.messages[props.currentSession]) }, [props.currentSession])
+  const [messages, setMessages] = useState([])
 
   return (
     <View className='h-full flex-1 w-[80%]'>

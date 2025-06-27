@@ -15,18 +15,14 @@ import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
 import SettingsButton from 'components/SettingsButton'
 
-const createSession = api => () => {
-  api.mutate(api.messages)
-}
-
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
   const config = useConfig()
-  const [currentSession, setCurrentSession] = useState(mockData.sessions[0].id)
-  const [sessions, setSessions] = usePersistentStorage('sessions', mockData.sessions)
+  const [currentSession, setCurrentSession] = useState('')
+  const [sessions, setSessions] = usePersistentStorage('sessions', [])
 
-  const { data = { messages: [] }, isLoading } = useQuery(getMessages)
+  const { data = { messages: [] }, isSuccess } = useQuery(getMessages)
 
   useEffect(() => {
     if (route.params?.sessionId) {
@@ -38,12 +34,17 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
-      {Platform.OS === 'web' && (
+      { Platform.OS === 'web' && sessions.length > 0 && (
         <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
           <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
           <SettingsButton onPress={() => navigation.navigate('settings')} />
         </View>
-      )}
+      ) }
+      { Platform.OS === 'web' && sessions.length === 0 && (
+        <View className='h-full flex-1 w-[80%] items-center justify-center'>
+          <Text>Start a new chat!</Text>
+        </View>
+      ) }
       { !isLoading
         ? <ChatMessages currentSession={currentSession} messages={data.messages} />
         : <View className='h-full flex-1 w-[80%] items-center justify-center'>
