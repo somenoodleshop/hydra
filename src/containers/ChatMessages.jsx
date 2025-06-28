@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
-import { ScrollView, View } from 'react-native'
-
-import mockData from '~/mock/data.json'
+import { useState } from 'react'
+import { Platform, ScrollView, View } from 'react-native'
 
 import { sendMessage } from '~/handler/chat'
 
@@ -15,6 +13,11 @@ const ChatMessages = props => {
 
   return (
     <View className='h-full flex-1 w-[80%]'>
+      { Platform.OS === 'web' && props.noSessions && (
+        <View className='h-full flex-1 w-[80%] items-center justify-center'>
+          <Text>Start a new chat!</Text>
+        </View>
+      ) }
       <ScrollView className='flex-1 px-4 pt-4'>
         { messages.map(msg => (<Message key={msg.id} {...msg} />)) }
       </ScrollView>
