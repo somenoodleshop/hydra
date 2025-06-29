@@ -4,6 +4,7 @@ import { Platform, ScrollView, View } from 'react-native'
 import { sendMessage } from '~/handler/chat'
 
 import { Input } from '~/reusables/ui/input'
+import { Text } from '~/reusables/ui/text'
 
 import Message from '~/components/Message'
 
