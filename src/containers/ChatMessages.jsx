@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Platform, ScrollView, View } from 'react-native'
+import { useMutation } from '@tanstack/react-query'
 
-import { sendMessage } from '~/handler/chat'
+import request from '~/utils/request'
+import useConfig from '~/hook/useConfig'
 
 import { Input } from '~/reusables/ui/input'
 import { Text } from '~/reusables/ui/text'
@@ -9,8 +11,17 @@ import { Text } from '~/reusables/ui/text'
 import Message from '~/components/Message'
 
 const ChatMessages = props => {
+  const config = useConfig()
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([])
+
+  const mutation = useMutation({
+    mutationFn: messages => request.post(`${config.apiUrl}/chat`, messages),
+    onSuccess: data => {
+      setMessages([...messages, { role: 'assistant', content: data.content }])
+      setMessage('')
+    }
+  })
 
   return (
     <View className='h-full flex-1 w-[80%]'>
@@ -30,7 +41,7 @@ const ChatMessages = props => {
           value={message}
           onChangeText={setMessage}
           placeholder='Type a message...'
-          onSubmitEditing={sendMessage({ message, setMessage, setMessages })}
+          onSubmitEditing={() => mutation.mutate([...messages, { role: 'user', content: message }])}
           returnKeyType='send'
         />
       </View>
