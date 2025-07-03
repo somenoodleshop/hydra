@@ -16,7 +16,6 @@ import SettingsButton from 'components/SettingsButton'
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
-  const config = useConfig()
   const [currentSession, setCurrentSession] = useState('')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
 
