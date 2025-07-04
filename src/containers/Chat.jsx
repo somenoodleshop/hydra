@@ -3,7 +3,6 @@ import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
-import useConfig from 'hook/useConfig'
 import usePersistentStorage from 'hook/usePersistentStorage'
 import { getMessages } from 'query/chat'
 
