@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Platform, ScrollView, View } from 'react-native'
 import { useMutation } from '@tanstack/react-query'
 
-import request from '~/utils/request'
+import request from '~/util/request'
 import useConfig from '~/hook/useConfig'
 
 import { Input } from '~/reusables/ui/input'
