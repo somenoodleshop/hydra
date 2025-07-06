@@ -10,6 +10,12 @@ import { Text } from '~/reusables/ui/text'
 
 import Message from '~/components/Message'
 
+const handleSubmit = ({ message, messages, mutation, setMessage, setMessages }) => () => {
+  mutation.mutate([...messages, { role: 'user', content: message }])
+  setMessage('')
+  setMessages([...messages, { role: 'user', content: message }])
+}
+
 const ChatMessages = props => {
   const config = useConfig()
   const [message, setMessage] = useState('')
@@ -41,7 +47,7 @@ const ChatMessages = props => {
           value={message}
           onChangeText={setMessage}
           placeholder='Type a message...'
-          onSubmitEditing={() => mutation.mutate([...messages, { role: 'user', content: message }])}
+          onSubmitEditing={handleSubmit({ message, messages, mutation, setMessage, setMessages })}
           returnKeyType='send'
         />
       </View>
