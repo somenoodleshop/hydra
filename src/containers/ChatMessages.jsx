@@ -24,7 +24,7 @@ const ChatMessages = props => {
   const mutation = useMutation({
     mutationFn: messages => request.post(`${config.apiUrl}/chat`, { messages }),
     onSuccess: data => {
-      setMessages([...messages, { role: 'assistant', content: data.content }])
+      setMessages([...messages, { role: 'assistant', content: data.response }])
       setMessage('')
     }
   })
