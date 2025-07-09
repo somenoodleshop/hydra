@@ -31,7 +31,7 @@ const ChatMessages = props => {
 
   return (
     <View className='h-full flex-1 w-[80%]'>
-      { Platform.OS === 'web' && props.noSessions && (
+      { Platform.OS === 'web' && props.noSessions && messages.length === 0 && (
         <View className='h-full flex-1 w-[80%] items-center justify-center'>
           <Text>Start a new chat!</Text>
         </View>
