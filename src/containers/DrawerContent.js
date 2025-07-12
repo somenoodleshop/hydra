@@ -1,12 +1,12 @@
 import { View } from 'react-native'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 
-import mockData from 'mock/data.json'
+import mockData from '~/mock/data.json'
 
-import usePersistentStorage from 'hook/usePersistentStorage'
+import usePersistentStorage from '~/hook/usePersistentStorage'
 
-import Sessions from 'containers/Sessions'
-import SettingsButton from 'components/SettingsButton'
+import Sessions from '~/containers/Sessions'
+import SettingsButton from '~/components/SettingsButton'
 
 const DrawerContent = props => {
   const [sessions] = usePersistentStorage('sessions', mockData.sessions)

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import config from '../config.json'
+import config from '../../config.json'
 
 const useConfig = () => {
   const configuration = useMemo(() => config, [])

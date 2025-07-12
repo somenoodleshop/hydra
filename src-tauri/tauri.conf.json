@@ -2,12 +2,12 @@
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "hydra",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.hydra.dev",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:8081",
-    "beforeDevCommand": "cd src && yarn dev:web",
-    "beforeBuildCommand": "cd src && npx expo export"
+    "beforeDevCommand": "yarn web",
+    "beforeBuildCommand": "npx expo export"
   },
   "app": {
     "windows": [

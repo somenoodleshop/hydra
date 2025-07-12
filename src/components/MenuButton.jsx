@@ -2,7 +2,7 @@ import { DrawerActions } from '@react-navigation/native'
 import { Pressable, View } from 'react-native'
 
 import { cn } from '~/lib/utils'
-import { Menu } from 'lib/icons/Menu'
+import { Menu } from '~/lib/icons/Menu'
 
 const MenuToggle = props => (
   <Pressable

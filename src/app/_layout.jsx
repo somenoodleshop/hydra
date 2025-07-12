@@ -6,11 +6,11 @@ import * as React from 'react'
 import { Platform } from 'react-native'
 import { PortalHost } from '@rn-primitives/portal'
 
-import { NAV_THEME } from 'lib/constants'
-import { useColorScheme } from 'lib/useColorScheme'
-import { setAndroidNavigationBar } from 'lib/android-navigation-bar'
+import { NAV_THEME } from '~/lib/constants'
+import { useColorScheme } from '~/lib/useColorScheme'
+import { setAndroidNavigationBar } from '~/lib/android-navigation-bar'
 
-import Nav from 'components/Nav'
+import Nav from '~/components/Nav'
 
 const LIGHT_THEME: Theme = { ...DefaultTheme, colors: NAV_THEME.light }
 const DARK_THEME: Theme = { ...DarkTheme, colors: NAV_THEME.dark }

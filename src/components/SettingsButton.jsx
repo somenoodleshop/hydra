@@ -1,7 +1,7 @@
 import { Pressable, View } from 'react-native'
 
-import { cn } from 'lib/utils'
-import { Settings } from 'lib/icons/Settings'
+import { cn } from '~/lib/utils'
+import { Settings } from '~/lib/icons/Settings'
 
 const SettingsButton = props => (
   <Pressable

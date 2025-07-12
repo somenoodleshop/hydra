@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
-import usePersistentStorage from 'hook/usePersistentStorage'
+import usePersistentStorage from '~/hook/usePersistentStorage'
 
-import ChatMessages from 'containers/ChatMessages'
-import Sessions from 'containers/Sessions'
-import SettingsButton from 'components/SettingsButton'
+import ChatMessages from '~/containers/ChatMessages'
+import Sessions from '~/containers/Sessions'
+import SettingsButton from '~/components/SettingsButton'
 
 const Chat = ()=> {
   const navigation = useNavigation()

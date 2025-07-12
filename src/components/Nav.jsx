@@ -4,12 +4,11 @@ import { Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import { ThemeToggle } from 'reusables/ThemeToggle'
 
-import MenuButton from 'components/MenuButton'
-import DrawerContent from 'containers/DrawerContent'
+import MenuButton from '~/components/MenuButton'
+import DrawerContent from '~/containers/DrawerContent'
 
-import { screenOptions } from 'style'
+import { screenOptions } from '~/style'
 
 const Nav = props => {
   const navigation = useNavigation()
