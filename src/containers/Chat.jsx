@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { useMutation, useQuery } from '@tanstack/react-query'
 
 import usePersistentStorage from 'hook/usePersistentStorage'
-import { getMessages } from 'query/chat'
-
-import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from 'containers/ChatMessages'
 import Sessions from 'containers/Sessions'
@@ -17,8 +13,6 @@ const Chat = ()=> {
   const route = useRoute()
   const [currentSession, setCurrentSession] = useState('')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
-
-  const { data = { messages: [] }, isLoading, isSuccess } = useQuery(getMessages)
 
   useEffect(() => {
     if (route.params?.sessionId) {
@@ -34,12 +28,7 @@ const Chat = ()=> {
           <SettingsButton onPress={() => navigation.navigate('settings')} />
         </View>
       ) }
-      { !isLoading
-        ? <ChatMessages currentSession={currentSession} noSessions={sessions.length === 0} messages={data.messages} />
-        : <View className='h-full flex-1 w-[80%] items-center justify-center'>
-            <Text>Loading messages...</Text>
-          </View>
-      }
+      <ChatMessages currentSession={currentSession} noSessions={sessions.length === 0} />
     </View>
   )
 }
