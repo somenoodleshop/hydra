@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-const MarkdownDisplay = props => {
+const Markdown = props => {
   const renderers = {
     code({ node, inline, className, children, ...props }) {
       const match = /language-(\w+)/.exec(className || '')
@@ -37,4 +37,4 @@ const MarkdownDisplay = props => {
   )
 }
 
-export default MarkdownDisplay
+export default Markdown
