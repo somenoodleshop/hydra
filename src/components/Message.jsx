@@ -10,9 +10,7 @@ const Message = props => (
         : 'bg-primary/70 rounded-2xl rounded-bl-sm'
     }`}
   >
-    <Text 
-      className={props.role === 'user' ? 'text-background' : 'text-foreground'}
-    >
+    <Text className='text-background'>
       { props.content }
     </Text>
   </View>
