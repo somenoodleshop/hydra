@@ -4,10 +4,8 @@ import { Text } from '~/reusables/ui/text'
 
 const Message = props => (
   <View 
-    className={`max-w-[80%] px-4 py-2 mb-2 ${
-      props.role === 'user'
-        ? 'bg-primary/70 rounded-2xl rounded-br-sm'
-        : 'bg-primary/70 rounded-2xl rounded-bl-sm'
+    className={`flex-1 items-center max-w-[80%] px-4 py-2 mb-2 bg-primary/70 rounded-2xl ${
+      props.role === 'user' ? 'justify-end rounded-br-sm' : 'justify-start rounded-bl-sm'
     }`}
   >
     <Text className='text-background'>
