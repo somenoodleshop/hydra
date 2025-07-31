@@ -40,7 +40,7 @@ const Chat = ()=> {
           <Text>New Chat</Text>
         </Button>
       </View>
-      <View className='flex-1 w-full bg-background flex-row'>
+      <View className='flex-1 w-full h-full bg-background flex-row'>
         { Platform.OS === 'web' && sessions.length > 0 && (
           <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
             <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
