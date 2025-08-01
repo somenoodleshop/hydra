@@ -3,6 +3,7 @@ import '~/global.css'
 import { DarkTheme, DefaultTheme, Theme, ThemeProvider } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
 import * as React from 'react'
+import { useEffect } from 'react'
 import { Platform } from 'react-native'
 import { PortalHost } from '@rn-primitives/portal'
 
@@ -20,8 +21,10 @@ export { ErrorBoundary } from 'expo-router'
 
 export default function RootLayout() {
   const hasMounted = React.useRef(false)
-  const { colorScheme, isDarkColorScheme } = useColorScheme()
+  const { colorScheme, isDarkColorScheme, toggleColorScheme } = useColorScheme()
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false)
+
+  useEffect(() => { toggleColorScheme() }, [])
 
   useIsomorphicLayoutEffect(() => {
     if (hasMounted.current) { return }
