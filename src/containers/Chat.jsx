@@ -9,7 +9,7 @@ import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from '~/containers/ChatMessages'
 import Sessions from '~/containers/Sessions'
-import SettingsButton from '~/components/SettingsButton'
+import SettingsButton from '~/atom/SettingsButton'
 
 const createNewSession = ({ setSessions, setCurrentSession }) => () => {
   const session = { id: Date.now().toString(), name: 'Untitled Chat' }

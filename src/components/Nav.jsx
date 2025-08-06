@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 
-import MenuButton from '~/components/MenuButton'
+import MenuButton from '~/atom/MenuButton'
 import DrawerContent from '~/containers/DrawerContent'
 
 import { screenOptions } from '~/style'

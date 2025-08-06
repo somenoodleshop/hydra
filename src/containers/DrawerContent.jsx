@@ -6,7 +6,7 @@ import mockData from '~/mock/data.json'
 import usePersistentStorage from '~/hook/usePersistentStorage'
 
 import Sessions from '~/containers/Sessions'
-import SettingsButton from '~/components/SettingsButton'
+import SettingsButton from '~/atom/SettingsButton'
 
 const DrawerContent = props => {
   const [sessions] = usePersistentStorage('sessions', mockData.sessions)
