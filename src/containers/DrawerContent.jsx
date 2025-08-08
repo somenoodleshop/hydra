@@ -19,7 +19,7 @@ const DrawerContent = props => {
           onSessionSelect={sessionId => props.navigation.navigate('index', { sessionId })}
         />
       </DrawerContentScrollView>
-      <View style={{ height: 64, paddingLeft: 30, alignItems: 'flex-start', justifyContent: 'center' }}>
+      <View className='h-16 pl-8 items-start justify-center'>
         <SettingsButton onPress={() => props.navigation.navigate('settings')} />
       </View>
     </View>
