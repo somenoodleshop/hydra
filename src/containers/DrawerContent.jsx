@@ -12,7 +12,7 @@ const DrawerContent = props => {
   const [sessions] = usePersistentStorage('sessions', mockData.sessions)
 
   return (
-    <View style={{ flex: 1 }}>
+    <View className='flex-1'>
       <DrawerContentScrollView {...props}>
         <Sessions 
           sessions={sessions} 
