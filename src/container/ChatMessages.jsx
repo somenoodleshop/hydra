@@ -4,17 +4,12 @@ import { useMutation } from '@tanstack/react-query'
 
 import request from '~/util/request'
 import useConfig from '~/hook/useConfig'
+import { handleSubmit } from '~/handler/chat'
 
 import { Input } from '~/reusables/ui/input'
 import { Text } from '~/reusables/ui/text'
 
 import Message from '~/components/Message'
-
-const handleSubmit = ({ message, messages, mutation, setMessage, setMessages }) => () => {
-  mutation.mutate([...messages, { role: 'user', content: message }])
-  setMessage('')
-  setMessages([...messages, { role: 'user', content: message }])
-}
 
 const ChatMessages = props => {
   const config = useConfig()

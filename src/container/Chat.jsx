@@ -3,6 +3,7 @@ import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import usePersistentStorage from '~/hook/usePersistentStorage'
+import { createNewSession } from '~/handler/chat'
 
 import { Button } from '~/reusables/ui/button'
 import { Text } from '~/reusables/ui/text'
@@ -10,12 +11,6 @@ import { Text } from '~/reusables/ui/text'
 import ChatMessages from '~/container/ChatMessages'
 import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
-
-const createNewSession = ({ setSessions, setCurrentSession }) => () => {
-  const session = { id: Date.now().toString(), name: 'Untitled Chat' }
-  setSessions([...sessions, session])
-  setCurrentSession(session.id)
-}
 
 const Chat = ()=> {
   const navigation = useNavigation()
