@@ -39,7 +39,7 @@ const ChatMessages = props => {
       <ScrollView contentContainerClassName='flex-1 h-full px-4 pt-4'>
         { messages.map(msg => (<Message key={msg.id} {...msg} />)) }
       </ScrollView>
-      <View className='flex-row w-[50%] items-center gap-2 p-4 border-t border-border'>
+      <View className='flex-row w-[50%] items-center gap-2 p-4'>
         <Input
           autoFocus
           inputMode='text'
