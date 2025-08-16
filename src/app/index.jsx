@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 
-import Chat from '~/containers/Chat'
+import Chat from '~/container/Chat'
 
 export default function Screen() {
   return (

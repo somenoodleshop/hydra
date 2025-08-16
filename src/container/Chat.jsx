@@ -7,8 +7,8 @@ import usePersistentStorage from '~/hook/usePersistentStorage'
 import { Button } from '~/reusables/ui/button'
 import { Text } from '~/reusables/ui/text'
 
-import ChatMessages from '~/containers/ChatMessages'
-import Sessions from '~/containers/Sessions'
+import ChatMessages from '~/container/ChatMessages'
+import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
 const createNewSession = ({ setSessions, setCurrentSession }) => () => {
