@@ -29,7 +29,7 @@ const Chat = ()=> {
       <View className='flex-1 w-full h-[5%] justify-end'>
         <Button
           variant='outline'
-          className='mb-4 mt-4 w-[5%]'
+          className='w-fit mb-4 mt-4'
           onPress={createNewSession({ setSessions, setCurrentSession })}
         >
           <Text>New Chat</Text>
