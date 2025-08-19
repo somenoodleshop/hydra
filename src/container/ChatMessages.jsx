@@ -9,7 +9,7 @@ import { handleSubmit } from '~/handler/chat'
 import { Input } from '~/reusables/ui/input'
 import { Text } from '~/reusables/ui/text'
 
-import Message from '~/components/Message'
+import Message from '~/component/Message'
 
 const ChatMessages = props => {
   const config = useConfig()
