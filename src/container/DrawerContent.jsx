@@ -1,15 +1,13 @@
 import { View } from 'react-native'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 
-import mockData from '~/mock/data.json'
-
 import usePersistentStorage from '~/hook/usePersistentStorage'
 
 import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
 const DrawerContent = props => {
-  const [sessions] = usePersistentStorage('sessions', mockData.sessions)
+  const [sessions] = usePersistentStorage('sessions', [])
 
   return (
     <View className='flex-1'>
