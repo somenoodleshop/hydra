@@ -26,7 +26,7 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background'>
-      <View className='flex-1 w-full h-[5%] justify-end'>
+      <View className='w-full items-end'>
         <Button
           variant='outline'
           className='w-fit mb-4 mt-4'
