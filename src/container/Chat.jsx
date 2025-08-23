@@ -6,27 +6,42 @@ import usePersistentStorage from '~/hook/usePersistentStorage'
 import { createNewSession } from '~/handler/chat'
 
 import { Button } from '~/reusables/ui/button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/reusables/ui/select'
 import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from '~/container/ChatMessages'
 import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
+const models = [
+  { value: 'gpt-4o', label: 'GPT-4o' },
+  { value: 'claude-3-5-sonnet', label: 'Claude 3.5 Sonnet' },
+]
+
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
   const [currentSession, setCurrentSession] = useState('')
+  const [model, setModel] = usePersistentStorage('model', '')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
 
   useEffect(() => {
-    if (route.params?.sessionId) {
-      setCurrentSession(route.params.sessionId)
-    }
+    if (route.params?.sessionId) { setCurrentSession(route.params.sessionId) }
   }, [route.params?.sessionId])
 
   return (
     <View className='flex-1 w-full bg-background'>
-      <View className='w-full items-end'>
+      <View className='w-full space-between'>
+        <Select value={model} onValueChange={setModel}>
+          <SelectTrigger>
+            <SelectValue>
+              <Text>Select a model</Text>
+            </SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            { models.map(m => <SelectItem {...m}><Text>{ m.label }</Text></SelectItem>) }
+          </SelectContent>
+        </Select>
         <Button
           variant='outline'
           className='w-fit mb-4 mt-4'
