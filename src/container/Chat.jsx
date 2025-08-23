@@ -30,7 +30,7 @@ const Chat = ()=> {
         <Button
           variant='outline'
           className='w-fit mb-4 mt-4'
-          onPress={createNewSession({ setSessions, setCurrentSession })}
+          onPress={createNewSession({ sessions, setSessions, setCurrentSession })}
         >
           <Text>New Chat</Text>
         </Button>
