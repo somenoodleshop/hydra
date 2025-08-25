@@ -22,7 +22,7 @@ const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
   const [currentSession, setCurrentSession] = useState('')
-  const [model, setModel] = usePersistentStorage('model', '')
+  const [model, setModel] = usePersistentStorage('model', {})
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background'>
-      <View className='w-full flex-row space-between'>
-        <Select value={model} onValueChange={model => setModel(model.value)}>
+      <View className='flex w-full flex-row items-center justify-between'>
+        <Select value={model.value} onValueChange={setModel}>
           <SelectTrigger>
             <SelectValue>
-              <Text>{ model || 'Select a model' }</Text>
+              <Text>{ model.label || 'Select a model' }</Text>
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
