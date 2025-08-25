@@ -31,11 +31,11 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background'>
-      <View className='w-full space-between'>
-        <Select value={model} onValueChange={setModel}>
+      <View className='w-full flex-row space-between'>
+        <Select value={model} onValueChange={model => setModel(model.value)}>
           <SelectTrigger>
             <SelectValue>
-              <Text>Select a model</Text>
+              <Text>{ model || 'Select a model' }</Text>
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
