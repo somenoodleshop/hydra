@@ -14,8 +14,8 @@ import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
 const models = [
-  { value: 'gpt-4o', label: 'GPT-4o' },
-  { value: 'claude-3-5-sonnet', label: 'Claude 3.5 Sonnet' },
+  { label: 'GPT-4o', value: 'gpt-4o' },
+  { label: 'Claude 3.5 Sonnet', value: 'claude-3-5-sonnet' }
 ]
 
 const Chat = ()=> {
@@ -31,7 +31,7 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background'>
-      <View className='flex w-full flex-row items-center justify-between'>
+      <View className='flex ml-[20%] flex-row items-center justify-between'>
         <Select value={model.value} onValueChange={setModel}>
           <SelectTrigger>
             <SelectValue>
