@@ -17,7 +17,7 @@ const ChatMessages = props => {
   const [messages, setMessages] = useState([])
 
   const mutation = useMutation({
-    mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: 'openai', messages }),
+    mutationFn: messages => request.post(`${config.apiUrl}/chat`, { model: props.model, messages }),
     onSuccess: data => {
       setMessages([...messages, { role: 'assistant', content: data.response }])
       setMessage('')

@@ -57,7 +57,7 @@ const Chat = ()=> {
             <SettingsButton onPress={() => navigation.navigate('settings')} />
           </View>
         ) }
-        <ChatMessages currentSession={currentSession} noSessions={sessions.length === 0} />
+        <ChatMessages {...{ currentSession, model }} noSessions={sessions.length === 0} />
       </View>
     </View>
   )
