@@ -36,7 +36,9 @@ const Chat = ()=> {
         <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}>
           <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
         </View>
-        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
+        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}>
+          <SettingsButton onPress={() => navigation.navigate('settings')} />
+        </View>
       </View>
       <View className='flex w-[80%]' style={{ border: '1px solid red' }}>
         <View className='flex w-full h-[7%] flex-row items-center justify-between' style={{ border: '1px solid blue' }}>
@@ -58,7 +60,7 @@ const Chat = ()=> {
             <Text>New Chat</Text>
           </Button>
         </View>
-        <ChatMessages />
+        <ChatMessages {...{ currentSession, model }} noSessions={sessions.length === 0} />
       </View>
     </View>
   )
