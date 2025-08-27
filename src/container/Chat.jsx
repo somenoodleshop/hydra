@@ -31,15 +31,17 @@ const Chat = ()=> {
 
   return (
     <View className='flex-1 w-full bg-background flex-row'>
-      <View className='flex w-[20%] h-full' style={{ border: '1px solid red' }}>
-        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
-        <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}>
-          <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
+      { Platform.OS === 'web' && (
+        <View className='flex w-[20%] h-full' style={{ border: '1px solid red' }}>
+          <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
+          <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}>
+            <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
+          </View>
+          <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}>
+            <SettingsButton onPress={() => navigation.navigate('settings')} />
+          </View>
         </View>
-        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}>
-          <SettingsButton onPress={() => navigation.navigate('settings')} />
-        </View>
-      </View>
+      ) }
       <View className='flex w-[80%]' style={{ border: '1px solid red' }}>
         <View className='flex w-full h-[7%] flex-row items-center justify-between' style={{ border: '1px solid blue' }}>
           <Select value={model.value} onValueChange={setModel}>
