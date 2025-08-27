@@ -30,34 +30,16 @@ const Chat = ()=> {
   }, [route.params?.sessionId])
 
   return (
-    <View className='flex-1 w-full bg-background'>
-      <View className='flex ml-[20%] flex-row items-center justify-between'>
-        <Select value={model.value} onValueChange={setModel}>
-          <SelectTrigger>
-            <SelectValue>
-              <Text>{ model.label || 'Select a model' }</Text>
-            </SelectValue>
-          </SelectTrigger>
-          <SelectContent>
-            { models.map(m => <SelectItem {...m}><Text>{ m.label }</Text></SelectItem>) }
-          </SelectContent>
-        </Select>
-        <Button
-          variant='outline'
-          className='w-fit mb-4 mt-4'
-          onPress={createNewSession({ sessions, setSessions, setCurrentSession })}
-        >
-          <Text>New Chat</Text>
-        </Button>
+    <View className='flex-1 w-full bg-background flex-row'>
+      <View className='flex w-[20%] h-full' style={{ border: '1px solid red' }}>
+        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
+        <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}></View>
+        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
       </View>
-      <View className='flex-1 w-full h-full bg-background flex-row'>
-        { Platform.OS === 'web' && sessions.length > 0 && (
-          <View className='h-full border-r border-border px-2 pt-4 w-[20%]'>
-            <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
-            <SettingsButton onPress={() => navigation.navigate('settings')} />
-          </View>
-        ) }
-        <ChatMessages {...{ currentSession, model }} noSessions={sessions.length === 0} />
+      <View className='flex w-[80%]' style={{ border: '1px solid red' }}>
+        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
+        <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}></View>
+        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
       </View>
     </View>
   )
