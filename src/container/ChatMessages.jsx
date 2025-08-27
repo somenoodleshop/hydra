@@ -26,7 +26,7 @@ const ChatMessages = props => {
 
   return (
     <>
-      <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}>
+      <View className='flex w-full h-[86%]'>
         { Platform.OS === 'web' && props.noSessions && messages.length === 0 && (
           <View className='flex-1 w-full items-center justify-center'>
             <Text>Start a new chat!</Text>
@@ -36,7 +36,7 @@ const ChatMessages = props => {
           { messages.map(msg => (<Message key={msg.id} {...msg} />)) }
         </ScrollView>
       </View>
-      <View className='flex w-full h-[7%] items-center justify-center' style={{ border: '1px solid blue' }}>
+      <View className='flex w-full h-[7%] items-center justify-center'>
         <Input
           autoFocus
           inputMode='text'
