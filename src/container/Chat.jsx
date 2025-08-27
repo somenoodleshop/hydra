@@ -56,8 +56,7 @@ const Chat = ()=> {
             <Text>New Chat</Text>
           </Button>
         </View>
-        <View className='flex w-full h-[86%]' style={{ border: '1px solid blue' }}></View>
-        <View className='flex w-full h-[7%]' style={{ border: '1px solid blue' }}></View>
+        <ChatMessages />
       </View>
     </View>
   )
