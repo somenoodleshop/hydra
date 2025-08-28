@@ -13,16 +13,16 @@ import ChatMessages from '~/container/ChatMessages'
 import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
-const models = [
-  { label: 'GPT-4o', value: 'gpt-4o' },
-  { label: 'Claude 3.5 Sonnet', value: 'claude-3-5-sonnet' }
-]
+const models = {
+  'gpt-4o': 'GPT-4o',
+  'claude-3-5-sonnet': 'Claude 3.5 Sonnet'
+}
 
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
   const [currentSession, setCurrentSession] = useState('')
-  const [model, setModel] = usePersistentStorage('model', {})
+  const [model, setModel] = usePersistentStorage('model', '')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
 
   useEffect(() => {
@@ -44,14 +44,14 @@ const Chat = ()=> {
       ) }
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
-          <Select value={model.value} onValueChange={setModel}>
+          <Select value={model.value} onValueChange={m => setModel(m.value)}>
             <SelectTrigger>
-              <SelectValue>
-                <Text>{ model.label || 'Select a model' }</Text>
+              <SelectValue {...(!model.length ? { placeholder: 'Select a model' } : {})}>
+                <Text>{ model.length ? models[model] : 'Select a model' }</Text>
               </SelectValue>
             </SelectTrigger>
             <SelectContent>
-              { models.map(m => <SelectItem {...m}><Text>{ m.label }</Text></SelectItem>) }
+              { Object.keys(models).map(m => <SelectItem key={m} label={models[m]} value={m}><Text>{ m.label }</Text></SelectItem>) }
             </SelectContent>
           </Select>
           <Button
