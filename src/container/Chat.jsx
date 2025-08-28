@@ -37,7 +37,7 @@ const Chat = ()=> {
           <View className='flex w-full h-[86%]'>
             <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
           </View>
-          <View className='flex w-full h-[7%]'>
+          <View className='flex w-full h-[7%] items-start justify-center'>
             <SettingsButton onPress={() => navigation.navigate('settings')} />
           </View>
         </View>
