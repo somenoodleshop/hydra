@@ -14,8 +14,8 @@ import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
 const models = {
-  'gpt-4o': 'GPT-4o',
-  'claude-3-5-sonnet': 'Claude 3.5 Sonnet'
+  'gpt-5': 'GPT-5',
+  'claude-opus-4-0': 'Claude Opus 4.0'
 }
 
 const Chat = ()=> {
@@ -45,9 +45,9 @@ const Chat = ()=> {
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
           <Select value={model.value} onValueChange={m => setModel(m.value)}>
-            <SelectTrigger>
-              <SelectValue {...(!model.length ? { placeholder: 'Select a model' } : {})}>
-                <Text>{ model.length ? models[model] : 'Select a model' }</Text>
+            <SelectTrigger className='min-w-[180px]'>
+              <SelectValue placeholder='Select a model'>
+                <Text>{ models[model] }</Text>
               </SelectValue>
             </SelectTrigger>
             <SelectContent>
@@ -56,7 +56,7 @@ const Chat = ()=> {
           </Select>
           <Button
             variant='outline'
-            className='w-fit mb-4 mt-4'
+            className='w-[140px] mb-4 mt-4'
             onPress={createNewSession({ sessions, setSessions, setCurrentSession })}
           >
             <Text>New Chat</Text>
