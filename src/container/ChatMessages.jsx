@@ -17,7 +17,7 @@ const providers = { 'gpt-5': 'openai', 'claude-opus-4-0': 'anthropic' }
 const ChatMessages = props => {
   const config = useConfig()
   const [message, setMessage] = useState('')
-  const [messages, setMessages] = usePersistentStorage('messages', [])
+  const [messages, setMessages] = usePersistentStorage(props.currentSession, [])
 
   const mutation = useMutation({
     mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages }),
