@@ -18,6 +18,11 @@ const models = {
   'claude-opus-4-0': 'Claude Opus 4.0'
 }
 
+const handleCurrentSession = ({ navigation, setCurrentSession }) => sessionId => {
+  navigation.navigate('index', { sessionId })
+  setCurrentSession(sessionId)
+}
+
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
@@ -35,7 +40,7 @@ const Chat = ()=> {
         <View className='flex w-[20%] h-full'>
           <View className='flex w-full h-[7%]'></View>
           <View className='flex w-full h-[86%]'>
-            <Sessions sessions={sessions} onSessionSelect={setCurrentSession} />
+            <Sessions sessions={sessions} onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })} />
           </View>
           <View className='flex w-full h-[7%] items-start justify-center'>
             <SettingsButton onPress={() => navigation.navigate('settings')} />
