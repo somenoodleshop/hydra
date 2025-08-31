@@ -4,6 +4,7 @@ import { useMutation } from '@tanstack/react-query'
 
 import request from '~/util/request'
 import useConfig from '~/hook/useConfig'
+import usePersistentStorage from '~/hook/usePersistentStorage'
 import { handleSubmit } from '~/handler/chat'
 
 import { Input } from '~/reusables/ui/input'
@@ -16,7 +17,7 @@ const providers = { 'gpt-5': 'openai', 'claude-opus-4-0': 'anthropic' }
 const ChatMessages = props => {
   const config = useConfig()
   const [message, setMessage] = useState('')
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = usePersistentStorage('messages', [])
 
   const mutation = useMutation({
     mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages }),
