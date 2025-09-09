@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import usePersistentStorage from '~/hook/usePersistentStorage'
-import { createNewSession } from '~/handler/chat'
+import { createNewSession, handleCurrentSession } from '~/handler/chat'
 
 import { Button } from '~/reusables/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/reusables/ui/select'
@@ -16,11 +16,6 @@ import SettingsButton from '~/atom/SettingsButton'
 const models = {
   'gpt-5': 'GPT-5',
   'claude-opus-4-0': 'Claude Opus 4.0'
-}
-
-const handleCurrentSession = ({ navigation, setCurrentSession }) => sessionId => {
-  navigation.navigate('index', { sessionId })
-  setCurrentSession(sessionId)
 }
 
 const Chat = ()=> {

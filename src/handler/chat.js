@@ -4,6 +4,11 @@ export const createNewSession = ({ sessions, setSessions, setCurrentSession }) =
   setCurrentSession(session.id)
 }
 
+export const handleCurrentSession = ({ navigation, setCurrentSession }) => sessionId => {
+  navigation.navigate('index', { sessionId })
+  setCurrentSession(sessionId)
+}
+
 export const handleSubmit = ({ message, messages, mutation, setMessage, setMessages }) => () => {
   mutation.mutate([...messages, { role: 'user', content: message }])
   setMessage('')
