@@ -18,6 +18,11 @@ const models = {
   'claude-opus-4-0': 'Claude Opus 4.0'
 }
 
+const menu = [
+  { title: 'Edit', event: 'onEdit' },
+  { title: 'Delete', event: 'onDelete' }
+]
+
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
