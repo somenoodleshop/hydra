@@ -1,6 +1,6 @@
 import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '~/reusables/ui/context-menu'
 
-const ContextMenu = props => {
+const CM = props => {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
@@ -17,4 +17,4 @@ const ContextMenu = props => {
   )
 }
 
-export default ContextMenu
+export default CM
