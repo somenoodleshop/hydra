@@ -1,4 +1,5 @@
 import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from '~/reusables/ui/context-menu'
+import { Text } from '~/reusables/ui/text'
 
 const CM = props => {
   return (
