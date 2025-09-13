@@ -19,8 +19,8 @@ const models = {
 }
 
 const menu = [
-  { title: 'Edit', event: 'onEdit' },
-  { title: 'Delete', event: 'onDelete' }
+  { label: 'Edit', event: 'onEdit' },
+  { label: 'Delete', event: 'onDelete' }
 ]
 
 const Chat = ()=> {
