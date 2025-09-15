@@ -14,7 +14,7 @@ const Sessions = props => (
         onPress={() => props.onSessionSelect(session.id)}
         className='w-full items-start'
       >
-        <ContextMenu items={props.menu}>
+        <ContextMenu items={props.menu} onPress={props.onPress}>
           <Text>{ session.name }</Text>
         </ContextMenu>
       </Button>
