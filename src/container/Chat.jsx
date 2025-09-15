@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~
 import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from '~/container/ChatMessages'
+import DropdownMenu from '~/component/DropdownMenu'
 import Sessions from '~/container/Sessions'
 import SettingsButton from '~/atom/SettingsButton'
 
@@ -49,16 +50,7 @@ const Chat = ()=> {
       ) }
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
-          <Select value={model.value} onValueChange={m => setModel(m.value)}>
-            <SelectTrigger className='min-w-[180px]'>
-              <SelectValue placeholder='Select a model'>
-                <Text>{ models[model] }</Text>
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent>
-              { Object.keys(models).map(m => <SelectItem key={m} label={models[m]} value={m}><Text>{ m.label }</Text></SelectItem>) }
-            </SelectContent>
-          </Select>
+          <DropdownMenu value={model} onChange={m => setModel(m.value)} defaultValue={models[model]} options={models} />
           <Button
             variant='outline'
             className='w-[140px] mb-4 mt-4'
