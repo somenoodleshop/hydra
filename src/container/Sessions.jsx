@@ -10,7 +10,7 @@ const Sessions = props => (
     { props.sessions.map(session => (
       <Button
         key={session.id}
-        variant='link'
+        variant={session.id === props.currentSession ? 'secondary' : 'ghost'}
         onPress={() => props.onSessionSelect(session.id)}
         className='w-full items-start'
       >

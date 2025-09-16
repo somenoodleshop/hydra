@@ -41,7 +41,7 @@ const Chat = ()=> {
           <View className='flex w-full h-[7%]'></View>
           <View className='flex w-full h-[86%]'>
             <Sessions
-              {...{ sessions, menu }}
+              {...{ currentSession, menu, sessions }}
               onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })}
               onDelete={handleDelete({ currentSession, sessions, setSessions })}
             />
