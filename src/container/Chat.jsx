@@ -3,10 +3,9 @@ import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import usePersistentStorage from '~/hook/usePersistentStorage'
-import { createNewSession, handleCurrentSession } from '~/handler/chat'
+import { createNewSession, handleCurrentSession, handleDelete } from '~/handler/chat'
 
 import { Button } from '~/reusables/ui/button'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/reusables/ui/select'
 import { Text } from '~/reusables/ui/text'
 
 import ChatMessages from '~/container/ChatMessages'
@@ -41,7 +40,11 @@ const Chat = ()=> {
         <View className='flex w-[20%] h-full'>
           <View className='flex w-full h-[7%]'></View>
           <View className='flex w-full h-[86%]'>
-            <Sessions {...{ sessions, menu }} onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })} />
+            <Sessions
+              {...{ sessions, menu }}
+              onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })}
+              onDelete={handleDelete({ currentSession, sessions, setSessions })}
+            />
           </View>
           <View className='flex w-full h-[7%] items-start justify-center'>
             <SettingsButton onPress={() => navigation.navigate('settings')} />

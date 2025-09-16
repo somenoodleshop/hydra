@@ -8,7 +8,7 @@ const CM = props => (
     </ContextMenuTrigger>
     <ContextMenuContent>
       { props.items.map(item => (
-        <ContextMenuItem key={item.label} onPress={props.onPress}>
+        <ContextMenuItem key={item.label} onPress={props[item.event]}>
           <Text>{ item.label }</Text>
         </ContextMenuItem>
       )) }
