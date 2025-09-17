@@ -39,7 +39,7 @@ const Chat = ()=> {
       { Platform.OS === 'web' && (
         <View className='flex w-[20%] h-full'>
           <View className='flex w-full h-[7%]'></View>
-          <View className='flex w-full h-[86%]'>
+          <View className='flex w-full h-[86%] pr-6'>
             <Sessions
               {...{ currentSession, menu, sessions }}
               onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })}
