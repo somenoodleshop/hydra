@@ -8,16 +8,16 @@ import ContextMenu from '~/component/ContextMenu'
 const Sessions = props => (
   <View style={{ gap: 8 }}>
     { props.sessions.map(session => (
-      <Button
-        key={session.id}
-        variant={session.id === props.currentSession ? 'secondary' : 'ghost'}
-        onPress={() => props.onSessionSelect(session.id)}
-        className='w-full items-start'
-      >
-        <ContextMenu items={props.menu} onEdit={props.onEdit} onDelete={props.onDelete}>
-          <Text>{ session.name }</Text>
-        </ContextMenu>
-      </Button>
+      <ContextMenu items={props.menu} onEdit={props.onEdit} onDelete={props.onDelete}>
+        <Button
+          key={session.id}
+          variant={session.id === props.currentSession ? 'secondary' : 'ghost'}
+          onPress={() => props.onSessionSelect(session.id)}
+          className='w-full items-start'
+        >
+            <Text>{ session.name }</Text>
+        </Button>
+      </ContextMenu>
     )) }
   </View>
 )
