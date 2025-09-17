@@ -34,6 +34,13 @@ const Chat = ()=> {
     if (route.params?.sessionId) { setCurrentSession(route.params.sessionId) }
   }, [route.params?.sessionId])
 
+  useEffect(() => {
+    if (sessions.length) {
+      const [session] = sessions
+      setCurrentSession(session.id)
+    }
+  }, [])
+
   return (
     <View className='flex-1 w-full bg-background flex-row'>
       { Platform.OS === 'web' && (
