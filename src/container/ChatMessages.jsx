@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Platform, ScrollView, View } from 'react-native'
 import { useMutation } from '@tanstack/react-query'
 
@@ -18,6 +18,8 @@ const ChatMessages = props => {
   const config = useConfig()
   const [message, setMessage] = useState('')
   const [messages, setMessages] = usePersistentStorage(props.currentSession, [])
+
+  useEffect(() => { setMessages([]) }, [props.currentSession])
 
   const mutation = useMutation({
     mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages }),
