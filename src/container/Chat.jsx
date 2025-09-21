@@ -41,6 +41,10 @@ const Chat = ()=> {
     }
   }, [])
 
+  const updateTitle = title => {
+    setSessions(sessions.map(session => session.id === currentSession ? { ...session, name: title } : session))
+  }
+
   return (
     <View className='flex-1 w-full bg-background flex-row'>
       { Platform.OS === 'web' && (
@@ -69,7 +73,7 @@ const Chat = ()=> {
             <Text>New Chat</Text>
           </Button>
         </View>
-        <ChatMessages {...{ currentSession, model }} noSessions={sessions.length === 0} />
+        <ChatMessages {...{ currentSession, model, updateTitle }} noSessions={sessions.length === 0} />
       </View>
     </View>
   )

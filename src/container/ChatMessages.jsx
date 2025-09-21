@@ -25,6 +25,7 @@ const ChatMessages = props => {
     mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages }),
     onSuccess: data => {
       const { title, response } = data
+      if (title) { props.updateTitle(title) }
       setMessages([...messages, { role: 'assistant', content: response }])
       setMessage('')
     }
