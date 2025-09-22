@@ -64,7 +64,7 @@ const Chat = ()=> {
       ) }
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
-          <DropdownMenu value={model} onChange={m => setModel(m.value)} defaultValue={models[model]} options={models} />
+          <DropdownMenu value={model} onChange={m => setModel(m.value)} selected={models[model]} options={models} />
           <Button
             variant='outline'
             className='w-[140px] mb-4 mt-4'
