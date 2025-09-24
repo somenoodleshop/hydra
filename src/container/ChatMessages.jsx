@@ -22,7 +22,10 @@ const ChatMessages = props => {
   useEffect(() => { setMessages([]) }, [props.currentSession])
 
   const mutation = useMutation({
-    mutationFn: messages => request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages }),
+    mutationFn: messages => {
+      if (!props.model) { return }
+      return request.post(`${config.apiUrl}/chat`, { provider: providers[props.model], messages })
+    },
     onSuccess: data => {
       const { title, response } = data
       if (title) { props.updateTitle(title) }
