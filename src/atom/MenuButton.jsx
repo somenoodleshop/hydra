@@ -13,7 +13,7 @@ const MenuButton = props => (
       <View
         className={cn(
           'flex-1 aspect-square pt-0.5 justify-center items-start web:px-5',
-          pressed && 'opacity-70'
+          pressed && 'opacity-60'
         )}
       >
         <Menu className='text-foreground' size={24} strokeWidth={1.25} />
