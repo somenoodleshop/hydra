@@ -42,7 +42,7 @@ const ChatMessages = props => {
             <Text>Start a new chat!</Text>
           </View>
         ) }
-        <ScrollView contentContainerClassName='flex-1'>
+        <ScrollView contentContainerClassName='flex-1 py-2'>
           { messages.map(msg => (<Message key={msg.content} {...msg} />)) }
         </ScrollView>
       </View>
