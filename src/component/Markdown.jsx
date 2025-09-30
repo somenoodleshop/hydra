@@ -1,6 +1,5 @@
 import { View } from 'react-native'
 import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -27,10 +26,7 @@ const Markdown = props => {
 
   return (
     <>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={renderers}
-      >
+      <ReactMarkdown components={renderers}>
         { props.children }
       </ReactMarkdown>
     </>
