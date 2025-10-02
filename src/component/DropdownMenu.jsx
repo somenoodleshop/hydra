@@ -4,9 +4,11 @@ import { Text } from '~/reusables/ui/text'
 const DropdownMenu = props => (
   <Select value={props.value} onValueChange={props.onChange}>
     <SelectTrigger className='min-w-[180px]'>
-      <SelectValue placeholder='Select a model'>
-        <Text>{ props.selected }</Text>
-      </SelectValue>
+      <Text>
+        <SelectValue placeholder='Select a model'>
+          <Text>{ props.selected }</Text>
+        </SelectValue>
+      </Text>
     </SelectTrigger>
     <SelectContent>
       { Object.keys(props.options).map(key =>
