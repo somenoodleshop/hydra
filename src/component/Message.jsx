@@ -4,12 +4,33 @@ import { Text } from '~/reusables/ui/text'
 
 import Markdown from '~/component/Markdown'
 
-const Message = props => (
-  <View className={`${props.role === 'assistant' ? 'items-start' : 'items-end'} max-w-[100%] px-4 py-2 mb-2 rounded-2xl`}>
-    <Text>
-      <Markdown>{ props.content }</Markdown>
-    </Text>
-  </View>
-)
+const Message = props => {
+  const isAssistant = props.role === 'assistant'
+  return (
+    <View className={`${isAssistant ? 'items-start' : 'items-end'} w-full px-4 py-2 mb-3`}>
+      <View
+        className={`
+          max-w-[85%] px-4 py-3 rounded-2xl shadow-sm
+          ${isAssistant
+            ? 'bg-muted/50 rounded-bl-md'
+            : 'bg-primary rounded-br-md'
+          }
+        `}
+      >
+        <Text
+          className={`
+            text-sm leading-relaxed
+            ${isAssistant
+              ? 'text-foreground'
+              : 'text-primary-foreground'
+            }
+          `}
+        >
+          <Markdown>{props.content}</Markdown>
+        </Text>
+      </View>
+    </View>
+  )
+}
 
 export default Message
