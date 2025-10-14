@@ -8,24 +8,8 @@ const Message = props => {
   const isAssistant = props.role === 'assistant'
   return (
     <View className={`${isAssistant ? 'items-start' : 'items-end'} w-full px-4 py-2 mb-3`}>
-      <View
-        className={`
-          max-w-[85%] px-4 py-3 rounded-2xl shadow-sm
-          ${isAssistant
-            ? 'bg-muted/50 rounded-bl-md'
-            : 'bg-primary rounded-br-md'
-          }
-        `}
-      >
-        <Text
-          className={`
-            text-sm leading-relaxed
-            ${isAssistant
-              ? 'text-foreground'
-              : 'text-primary-foreground'
-            }
-          `}
-        >
+      <View className={`max-w-[85%] px-4 py-3 rounded-2xl shadow-sm ${!isAssistant && 'bg-muted/50 rounded-bl-md'}`}>
+        <Text className={`text-sm leading-relaxed ${!isAssistant && 'text-foreground'}`}>
           <Markdown>{props.content}</Markdown>
         </Text>
       </View>
