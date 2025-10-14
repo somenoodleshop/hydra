@@ -6,7 +6,7 @@ const DropdownMenu = props => (
     <SelectTrigger className='min-w-[180px]'>
       <Text>
         <SelectValue placeholder='Select a model'>
-          <Text>{ props.selected }</Text>
+          { props.selected }
         </SelectValue>
       </Text>
     </SelectTrigger>
