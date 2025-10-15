@@ -39,6 +39,13 @@ const Chat = ()=> {
     }
   }, [])
 
+  useEffect(() => {
+    if (currentSession) {
+      const [session] = sessions.filter(session => session.id === currentSession)
+      setModel(session.model)
+    }
+  }, [currentSession])
+
   const updateTitle = title => {
     setSessions(sessions.map(session => session.id === currentSession ? { ...session, name: title } : session))
   }
@@ -66,7 +73,7 @@ const Chat = ()=> {
       ) }
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
-          <DropdownMenu value={model} onChange={m => setModel(m.value)} selected={models[model]} options={models} />
+          <DropdownMenu value={model} onChange={m => (setModel(m.value), updateSessionModel(m.value))} selected={models[model]} options={models} />
           <NewChatButton onPress={createNewSession({ sessions, setSessions, setCurrentSession })} />
         </View>
         <ChatMessages {...{ currentSession, model, updateTitle }} noSessions={sessions.length === 0} />
