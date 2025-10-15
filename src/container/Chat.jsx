@@ -43,6 +43,10 @@ const Chat = ()=> {
     setSessions(sessions.map(session => session.id === currentSession ? { ...session, name: title } : session))
   }
 
+  const updateSessionModel = model => {
+    setSessions(sessions.map(session => session.id === currentSession ? { ...session, model } : session))
+  }
+
   return (
     <View className='flex-1 w-full bg-background flex-row'>
       { Platform.OS === 'web' && (
