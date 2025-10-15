@@ -1,5 +1,5 @@
 export const createNewSession = ({ sessions, setSessions, setCurrentSession }) => () => {
-  const session = { id: Date.now().toString(), name: 'Untitled Chat' }
+  const session = { id: Date.now().toString(), name: 'Untitled Chat', model: '' }
   setSessions([...sessions, session])
   setCurrentSession(session.id)
 }
