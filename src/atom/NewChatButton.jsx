@@ -1,7 +1,6 @@
 import { Pressable, View } from 'react-native'
 
 import { cn } from '~/lib/utils'
-import { SquarePlus } from '~/lib/icons/SquarePlus'
 import { MessageSquarePlus } from '~/lib/icons/MessageSquarePlus'
 
 const NewChatButton = props => (
