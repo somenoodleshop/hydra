@@ -2,6 +2,7 @@ import { Pressable, View } from 'react-native'
 
 import { cn } from '~/lib/utils'
 import { SquarePlus } from '~/lib/icons/SquarePlus'
+import { MessageSquarePlus } from '~/lib/icons/MessageSquarePlus'
 
 const NewChatButton = props => (
   <Pressable
@@ -15,7 +16,7 @@ const NewChatButton = props => (
           pressed && 'opacity-70'
         )}
       >
-        <SquarePlus className='text-foreground' size={36} strokeWidth={1.25} />
+        <MessageSquarePlus className='text-foreground' size={30} strokeWidth={1.25} />
       </View>
     )}
   </Pressable>
