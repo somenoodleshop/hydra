@@ -3,9 +3,9 @@ import { Text } from '~/reusables/ui/text'
 
 const DropdownMenu = props => (
   <Select value={props.value} onValueChange={props.onChange}>
-    <SelectTrigger className='min-w-[180px]'>
+    <SelectTrigger>
       <Text>
-        <SelectValue placeholder='Select a model'>
+        <SelectValue placeholder='Select model'>
           { props.selected }
         </SelectValue>
       </Text>
