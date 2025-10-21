@@ -17,7 +17,7 @@ const Sessions = props => (
             onPress={() => props.onSessionSelect(session.id)}
             className='w-full items-start'
           >
-            <Text>{ session.name }</Text>
+            <Text numberOfLines={1} ellipsizeMode='tail'>{ session.name }</Text>
           </Button>
         </ContextMenu>
       )
