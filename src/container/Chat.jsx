@@ -27,6 +27,8 @@ const Chat = ()=> {
   const [currentSession, setCurrentSession] = useState('')
   const [model, setModel] = usePersistentStorage('model', '')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
+  const [isEditing, setIsEditing] = useState(false)
+  const [sessionName, setSessionName] = useState('')
 
   useEffect(() => {
     if (route.params?.sessionId) { setCurrentSession(route.params.sessionId) }
