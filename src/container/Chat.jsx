@@ -66,6 +66,9 @@ const Chat = ()=> {
               {...{ currentSession, menu, sessions }}
               onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })}
               onDelete={handleDelete({ currentSession, sessions, setSessions })}
+              onEdit={() => setIsEditing(true)}
+              onChange={setSessionName}
+              value={sessionName}
             />
           </View>
           <View className='flex w-full h-[7%] items-start justify-center'>
