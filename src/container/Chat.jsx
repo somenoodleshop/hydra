@@ -27,7 +27,7 @@ const Chat = ()=> {
   const [currentSession, setCurrentSession] = useState('')
   const [model, setModel] = usePersistentStorage('model', '')
   const [sessions, setSessions] = usePersistentStorage('sessions', [])
-  const [isEditing, setIsEditing] = useState(false)
+  const [editingSessionId, setEditingSessionId] = useState('')
   const [sessionName, setSessionName] = useState('')
 
   useEffect(() => {
@@ -63,10 +63,10 @@ const Chat = ()=> {
           <View className='flex w-full h-[7%] items-end justify-center'></View>
           <View className='flex w-full h-[86%] pr-6'>
             <Sessions
-              {...{ currentSession, isEditing, menu, sessions }}
+              {...{ currentSession, editingSessionId, menu, sessions }}
               onSessionSelect={handleCurrentSession({ navigation, setCurrentSession })}
               onDelete={handleDelete({ currentSession, sessions, setSessions })}
-              onEdit={() => setIsEditing(true)}
+              onEdit={(id) => setEditingSessionId(editingSessionId ? '' : id)}
               onChange={setSessionName}
               value={sessionName}
             />
