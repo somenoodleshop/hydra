@@ -1,7 +1,5 @@
 import { View } from 'react-native'
 
-import { Text } from '~/reusables/ui/text'
-
 import Settings from '~/container/Settings'
 
 export default function Screen() {
