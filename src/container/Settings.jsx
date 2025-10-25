@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 
-import { Text } from 'reusables/Text'
-import { ThemeToggle } from 'reusables/ThemeToggle'
+import { Text } from '~/reusables/ui/text'
+import { ThemeToggle } from '~/reusables/ThemeToggle'
 
 const Settings = () => {
   return (
