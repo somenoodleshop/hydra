@@ -2,10 +2,12 @@ import { View } from 'react-native'
 
 import { Text } from '~/reusables/ui/text'
 
-export default function Settings() {
+import Settings from '~/container/Settings'
+
+export default function Screen() {
   return (
-    <View className='flex-1 p-4'>
-      <Text className='text-2xl font-bold mb-4'>Settings</Text>
+    <View className='flex-1 w-full justify-center items-center gap-5 p-6'>
+      <Settings />
     </View>
   )
 } 
