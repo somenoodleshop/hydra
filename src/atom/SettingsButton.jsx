@@ -11,7 +11,7 @@ const SettingsButton = props => (
     {({ pressed }) => (
       <View
         className={cn(
-          'flex-1 aspect-square pt-0.5 justify-center items-start web:px-5',
+          'flex-1 aspect-square pt-0.5 justify-center items-start web:px-2',
           pressed && 'opacity-70'
         )}
       >
