@@ -1,4 +1,4 @@
-import { ScrollView, View } from 'react-native'
+import { ScrollView } from 'react-native'
 
 import { Button } from '~/reusables/ui/button'
 import { Input } from '~/reusables/ui/input'
