@@ -21,6 +21,11 @@ const menu = [
   { label: 'Delete', event: 'onDelete' }
 ]
 
+const handleChange = ({ setModel, updateSessionModel }) => model => {
+  setModel(m.value)
+  updateSessionModel(m.value)
+}
+
 const Chat = ()=> {
   const navigation = useNavigation()
   const route = useRoute()
@@ -78,7 +83,7 @@ const Chat = ()=> {
       ) }
       <View className='flex w-[80%]'>
         <View className='flex w-full h-[7%] flex-row items-center justify-between'>
-          <DropdownMenu value={model} onChange={m => (setModel(m.value), updateSessionModel(m.value))} selected={models[model]} options={models} />
+          <DropdownMenu value={model} onChange={handleChange({ setModel, updateSessionModel })} selected={models[model]} options={models} />
           <NewChatButton onPress={createNewSession({ sessions, setSessions, setCurrentSession })} />
         </View>
         <ChatMessages {...{ currentSession, model, updateTitle }} noSessions={sessions.length === 0} />
