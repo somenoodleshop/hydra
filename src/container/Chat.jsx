@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import usePersistentStorage from '~/hook/usePersistentStorage'
-import { createNewSession, handleCurrentSession, handleDelete } from '~/handler/chat'
+import { createNewSession, handleChange, handleCurrentSession, handleDelete } from '~/handler/chat'
 
 import ChatMessages from '~/container/ChatMessages'
 import DropdownMenu from '~/component/DropdownMenu'
@@ -20,11 +20,6 @@ const menu = [
   { label: 'Edit', event: 'onEdit' },
   { label: 'Delete', event: 'onDelete' }
 ]
-
-const handleChange = ({ setModel, updateSessionModel }) => model => {
-  setModel(m.value)
-  updateSessionModel(m.value)
-}
 
 const Chat = ()=> {
   const navigation = useNavigation()

@@ -14,8 +14,8 @@ export const handleDelete = ({ currentSession, sessions, setSessions }) => () =>
 }
 
 export const handleChange = ({ setModel, updateSessionModel }) => model => {
-  setModel(m.value)
-  updateSessionModel(m.value)
+  setModel(model.value)
+  updateSessionModel(model.value)
 }
 
 export const handleSubmit = ({ message, messages, mutation, setMessage, setMessages }) => () => {
