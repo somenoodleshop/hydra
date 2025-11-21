@@ -6,8 +6,8 @@ import { ThemeToggle } from '~/reusables/ThemeToggle'
 const Settings = () => {
   return (
     <View className='flex-1 w-full justify-start items-center gap-5 p-6'>
-        <Text className='text-xl font-bold'>Theme</Text>
-        <ThemeToggle />
+      <Text className='text-xl font-bold'>Theme</Text>
+      <ThemeToggle />
     </View>
   )
 }
